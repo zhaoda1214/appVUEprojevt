@@ -7,6 +7,7 @@ import HomeContainer from '../components/tabbar/HomeContainer.vue'
 import MemberContainer from '../components/tabbar/MemberContainer.vue'
 import CartContainer from '../components/tabbar/CartContainer.vue'
 import SearchContainer from '../components/tabbar/SearchContainer.vue'
+import newsList from '../components/news/newsList.vue'
 
 const router = new VueRouter({
     //规定路由规则
@@ -15,7 +16,8 @@ const router = new VueRouter({
         {path: '/home', component:HomeContainer},
         {path: '/member', component:MemberContainer},
         {path: '/chart', component:CartContainer},
-        {path: '/search', component:SearchContainer} 
+        {path: '/search', component:SearchContainer},
+        {path: '/home/newslist',component:newsList}
     ],
     linkActiveClass:'mui-active'//设置路由高亮的类
     

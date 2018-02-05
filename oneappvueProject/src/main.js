@@ -11,7 +11,15 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://39.106.32.91:3000';
 Vue.prototype.$http = axios
 
-
+//创建一个全局的时间过滤器
+import moment from 'moment' //导入时间过滤器的包 ateFormat是过滤时间用的把它放到时间渲染的页面一起
+Vue.filter('dateFormat',function(val){
+  //借助于moment.js包来快速格式化时间
+  //moment是一个函数可以直接被调用如果直接被调用的话就是当前的时间
+  //如果给它传一个字符串就是根据你指定的字符串得到一个
+  //指定的时间它里面还有一个format方法可以指定时间格式
+    return moment(val).format('YYYY-MM-DD HH:mm:ss')
+})
 //导入vue-router包
 import vueRouter from 'vue-router'
 //为vue安装vue-router

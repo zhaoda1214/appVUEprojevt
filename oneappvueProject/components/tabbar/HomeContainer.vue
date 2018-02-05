@@ -8,9 +8,9 @@
    </mt-swipe>
              <!--mui六宫格布局-->
          <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
 		                   <img src="../../src/imges/menu1.png" alt="">
-		                    <div class="mui-media-body">新闻资讯</div></a></li>
+		                    <div class="mui-media-body">新闻资讯</div></router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <img src="../../src/imges/menu2.png" alt="">
 		                    <div class="mui-media-body">图片分享</div></a></li>
@@ -35,7 +35,7 @@
    export default{
       data(){
         return{
-          Slide:[] 
+          Slide:[] //盛放新闻资讯的列表
         };
      },
       created(){
@@ -44,7 +44,6 @@
       methods:{
         async getSlide(){
         const{ data } = await this.$http.get('/api/getlunbo');
-        console.log(data);
          if( data.status === 0 ){
             this.Slide = data.message
        }
@@ -54,7 +53,7 @@
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 /*    轮播图部分*/
   .mint-swipe{
     height:180px;
